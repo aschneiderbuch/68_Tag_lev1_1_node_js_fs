@@ -4,6 +4,7 @@ import {
     promiseAccess,
     promiseRmdir,
     promiseRm,
+    promiseRename,
 
 } from "./fsPromises.js"
 
@@ -26,6 +27,9 @@ promiseWriteFile("./blog1.txt", "text Start")
 
     .then ( () => promiseRm("./delete.txt"))
 
+    .then ( () => promiseWriteFile("./Hello.txt", "Input von Hallo"))
+
+    .then (( ) => promiseRename("./Hello.txt", "HelloWorld.txt"))
 
     .catch((err) => console.log(err))
 

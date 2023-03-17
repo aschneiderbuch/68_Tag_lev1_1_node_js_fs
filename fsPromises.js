@@ -74,3 +74,15 @@ export const promiseRm = (path) => {
 }
 
 /* // !!!   fs.unlink()   löscht auch Datein so wie fs.rm    */
+
+
+export const promiseRename = (oldPath, newPath) => {
+    return new Promise ((resolve, reject) => {
+
+        fs.rename(oldPath, newPath, (err) => {
+            if(err) reject (err)
+            else resolve(oldPath , newPath)
+        })
+    })
+}
+
