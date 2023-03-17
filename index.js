@@ -29,6 +29,7 @@ promiseWriteFile("./blog1.txt", "text Start")
 
     .then ( () => promiseWriteFile("./Hello.txt", "Input von Hallo"))
 
+    .then ( () => promiseAccess("./Hello.txt"))
     .then (( ) => promiseRename("./Hello.txt", "HelloWorld.txt"))
 
     .catch((err) => console.log(err))
